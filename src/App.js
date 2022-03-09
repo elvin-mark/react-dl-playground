@@ -15,13 +15,13 @@ function App() {
     <div className="App">
       {/* <PlaygroundInputImage onSubmit={onSubmit}></PlaygroundInputImage> */}
       {/* <PlaygroundInputAudio onSubmit={onSubmit}></PlaygroundInputAudio> */}
-      {/* <PlaygroundInputSketch
+      <PlaygroundInputSketch
         onSubmit={onSubmit}
         strokeWidth={15}
         width="200px"
         height="200px"
-      ></PlaygroundInputSketch> */}
-      <PlaygroundOutputLabels {...data}></PlaygroundOutputLabels>
+      ></PlaygroundInputSketch>
+      {/* <PlaygroundOutputLabels {...data}></PlaygroundOutputLabels> */}
     </div>
   );
 }

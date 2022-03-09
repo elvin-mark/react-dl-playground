@@ -42,6 +42,10 @@ function PlaygroundInputSketch(_ref) {
     onSubmit(imgSrc);
   };
 
+  const clearSketch = () => {
+    sketchRef.current.clearCanvas();
+  };
+
   return /*#__PURE__*/_react.default.createElement("div", {
     style: {
       display: "flex"
@@ -54,12 +58,16 @@ function PlaygroundInputSketch(_ref) {
     ref: sketchRef,
     width: width,
     height: height,
-    strokeColor: "black",
-    strokeWidth: strokeWidth
-  }), /*#__PURE__*/_react.default.createElement(_material.Button, {
+    strokeColor: "white",
+    strokeWidth: strokeWidth,
+    canvasColor: "black"
+  }), /*#__PURE__*/_react.default.createElement(_material.Container, null, /*#__PURE__*/_react.default.createElement(_material.Button, {
     onClick: takeScreenshot,
     variant: "contained"
-  }, "Save!"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_material.Button, {
+  }, "Save!"), /*#__PURE__*/_react.default.createElement(_material.Button, {
+    onClick: clearSketch,
+    variant: "contained"
+  }, "Clear")))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_material.Button, {
     onClick: submitSketch
   }, "Submit"))));
 }

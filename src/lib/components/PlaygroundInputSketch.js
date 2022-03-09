@@ -1,4 +1,4 @@
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, Container } from "@mui/material";
 import React, { useRef, useState } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
@@ -21,6 +21,9 @@ function PlaygroundInputSketch({ onSubmit, width, height, strokeWidth }) {
   const submitSketch = () => {
     onSubmit(imgSrc);
   };
+  const clearSketch = () => {
+    sketchRef.current.clearCanvas();
+  };
   return (
     <div style={{ display: "flex" }}>
       <ul style={{ listStyleType: "none" }}>
@@ -30,12 +33,18 @@ function PlaygroundInputSketch({ onSubmit, width, height, strokeWidth }) {
               ref={sketchRef}
               width={width}
               height={height}
-              strokeColor="black"
+              strokeColor="white"
               strokeWidth={strokeWidth}
+              canvasColor="black"
             ></ReactSketchCanvas>
-            <Button onClick={takeScreenshot} variant="contained">
-              Save!
-            </Button>
+            <Container>
+              <Button onClick={takeScreenshot} variant="contained">
+                Save!
+              </Button>
+              <Button onClick={clearSketch} variant="contained">
+                Clear
+              </Button>
+            </Container>
           </Stack>
         </li>
         <li>
