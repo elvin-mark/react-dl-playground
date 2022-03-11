@@ -5,7 +5,7 @@ import {
   Switch,
   Container,
 } from "@mui/material";
-import { React, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { ReactMic } from "react-mic";
 
 function PlaygroundInputAudio({ onSubmit }) {
